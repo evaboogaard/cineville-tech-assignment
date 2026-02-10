@@ -10,7 +10,6 @@
 
 .event-detail__poster-container {
   perspective: 800px;
-  /* width: clamp(15rem, 40%, 25rem); */
   flex-basis: 90%;
   padding-block: var(--space-l);
 
@@ -32,5 +31,8 @@
   border: 2px dashed var(--color-sun);
   background-color: color-mix(in srgb, var(--color-sun), transparent 85%);
   max-width: calc(60ch + var(--space-xl));
-  flex-basis: 50%;
+
+  @media (--lg) {
+    flex-basis: 50%;
+  }
 }

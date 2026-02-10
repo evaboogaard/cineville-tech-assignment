@@ -63,7 +63,7 @@ export default async function fetchEvents() {
       const start = new Date(e.startDate);
       const labels = formatLabels(start);
 
-      console.log(e.attributes);
+      // console.log(e.attributes);
 
       return {
         eventId: e.id,
