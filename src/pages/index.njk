@@ -7,11 +7,14 @@ permalink: /
   <div class="wrapper | stack-m">
     <h1 class="text-step-4">Cineville Schedule</h1>
 
+    {# search function for movie title, client-side js can be found in scripts/global.js #}
     <form id="search-form" oninput="searchEvents(event)">
       <input type="text" id="search-input" class="input-text" placeholder="Search a movie..." />
     </form>
 
     <ul role="list">
+
+    {# chatgpt helped me work out to cluster the different events on the same day like this #}
     {% for day, events in api.byDay %}
       <li>
         <section class="day">

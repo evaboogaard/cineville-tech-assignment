@@ -1,11 +1,11 @@
 import fetch from "node-fetch";
 
-// helper to make a readable date
+// helper function to make a readable date
 const toDateKey = (date) => {
   return date.toISOString().slice(0, 10);
 };
 
-// helper to ask for data for an x amount of days
+// helper function to ask for data for an x amount of days
 const addDays = (date, days) => {
   const d = new Date(date);
 
@@ -14,7 +14,8 @@ const addDays = (date, days) => {
   return d;
 };
 
-// format day, datetime & time
+// format day, datetime & time.
+// used ai for this as i had never done it before and was very puzzled about the way the dates were formatted.
 const formatLabels = (date) => ({
   dayLabel: date.toLocaleDateString("en-US", {
     weekday: "long",
@@ -44,6 +45,7 @@ export default async function fetchEvents() {
   const startKey = toDateKey(today);
   const endKey = toDateKey(endDate);
 
+  // fetch events and their respective productions & venues, from today till 7 days into the future
   const response = await fetch(
     `https://api.cineville.nl/events
       ?embed[production]=true
@@ -63,8 +65,7 @@ export default async function fetchEvents() {
       const start = new Date(e.startDate);
       const labels = formatLabels(start);
 
-      // console.log(e.attributes);
-
+      // probably not the cleanest way to do it. but the only way i could figure out, haha.
       return {
         eventId: e.id,
         title: production.title,
