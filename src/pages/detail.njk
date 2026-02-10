@@ -1,0 +1,43 @@
+---
+layout: "layouts/base.njk"
+pagination:
+  data: api.all
+  size: 1
+  alias: event
+permalink: "/{{ event.slug }}-{{ event.eventId }}/"
+eleventyComputed:
+  title: "{{ event.title }}"
+---
+<div class="bg-brown">
+    <div class="event-detail | stack-m wrapper">
+        <div class="event-detail__content | stack-s">
+            <h1 class="text-step-3 text-custard">{{ event.title }}</h1>
+
+            <p class="text-step-0">{{ event.venue.name }}, {{ event.venue.address }}</p>
+
+            <time class="text-step-0 weight-bold">{{ event.dayLabel }} - {{ event.time }}</time>
+
+            {% if event.releaseYear %}
+                <p>Year: {{ event.productionDetail.releaseYear }}</p>
+            {% endif %}         
+
+            {% if event.subtitles.length %}
+                <p>Subtitles: {{ event.subtitles }}</p>
+            {% endif %}
+
+            {% if event.tags.length %}
+            <ul role="list" class="cluster" style="--cluster-gap: var(--space-s)">
+                {% for tag in event.tags %}
+                <li class="tag">{{ tag }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    
+        {% if event.poster %}
+        <div class="event-detail__poster-container">
+            <img src="{{ event.poster }}" alt="" class="event-detail__poster">
+        </div>
+        {% endif %}
+    </div>
+</div>

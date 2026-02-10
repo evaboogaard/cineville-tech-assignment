@@ -1,0 +1,30 @@
+.link {
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+  color: var(--color-custard);
+  font-style: italic;
+  display: block;
+  cursor: pointer;
+
+  &:hover::after {
+    border-color: var(--color-orange);
+  }
+
+  &:focus-visible {
+    outline: 3px dashed var(--color-focus);
+    outline-offset: 12px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    border-bottom: 5px solid var(--color-sun);
+    width: 150%;
+    height: 140%;
+    top: -10%;
+    left: -25%;
+    z-index: 1;
+    transition: 0.2s ease-out;
+  }
+}

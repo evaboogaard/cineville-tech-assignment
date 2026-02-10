@@ -1,0 +1,36 @@
+.event-detail {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-block: var(--space-l);
+  gap: var(--space-l);
+  min-height: 80vh;
+}
+
+.event-detail__poster-container {
+  perspective: 800px;
+  /* width: clamp(15rem, 40%, 25rem); */
+  flex-basis: 90%;
+  padding-block: var(--space-l);
+
+  @media (--lg) {
+    flex-basis: 40%;
+  }
+
+  picture {
+    transform: rotateY(10deg);
+    transform-style: preserve-3d;
+    box-shadow: -1rem 1rem 1rem rgba(0, 0, 0, 0.3);
+  }
+}
+
+.event-detail__content {
+  margin-block: var(--space-l);
+  padding: var(--space-l);
+  border-radius: var(--space-s);
+  border: 2px dashed var(--color-sun);
+  background-color: color-mix(in srgb, var(--color-sun), transparent 85%);
+  max-width: calc(60ch + var(--space-xl));
+  flex-basis: 50%;
+}

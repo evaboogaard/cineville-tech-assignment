@@ -1,0 +1,7 @@
+.input-text {
+  padding: var(--space-s);
+
+  &:focus {
+    outline-color: var(--color-orange);
+  }
+}

@@ -27,6 +27,7 @@ export default {
     lineHeight: lineHeight,
     fontWeight: fontWeight,
     fontFamily: fontFamily,
+    padding: spacing,
   },
   /**
    * Disable all plugins, except the ones we need as utilities
@@ -95,7 +96,7 @@ export default {
           }),
         },
 
-        { values: theme("fontWeight") } // => the values for the generated utilities above are taken from the theme tokens which are defined above in the `theme` object
+        { values: theme("fontWeight") }, // => the values for the generated utilities above are taken from the theme tokens which are defined above in the `theme` object
       );
 
       // Stack
@@ -114,7 +115,7 @@ export default {
             "--stack-space": value,
           }),
         },
-        { values: theme("spacing") }
+        { values: theme("spacing") },
       );
     }),
   ],

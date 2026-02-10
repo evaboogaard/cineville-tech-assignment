@@ -39,6 +39,8 @@ html {
 body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-family: var(--font-base);
+  background-color: var(--color-custard);
 }
 
 /* Default link styles */

@@ -1,9 +1,13 @@
-/* Place your fonts in `./src/assets/fonts` as woff2 and import them here like following: */
-
-/* @font-face {
-  font-family: "Roboto";
+@font-face {
+  font-family: "Bricolage Grotesque";
   font-style: normal;
-  font-weight: 400;
-  src: url("/assets/fonts/robotoo.woff2") format("woff2");
+  src: url("/assets/fonts/bricolage-grotesque.woff2") format("woff2");
   font-display: swap;
-} */
+}
+
+@font-face {
+  font-family: "Mona Sans";
+  font-style: normal;
+  src: url("/assets/fonts/mona-sans.woff2") format("woff2");
+  font-display: swap;
+}

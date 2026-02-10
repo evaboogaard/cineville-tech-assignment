@@ -1,0 +1,23 @@
+.day {
+}
+
+.day-title {
+  position: relative;
+  padding-block: var(--space-s);
+  margin-block: var(--space-xs);
+
+  &::after {
+    --border-size: 3px;
+
+    content: "";
+    position: absolute;
+    width: 150vw;
+    border-top: var(--border-size) solid var(--color-orange);
+    border-bottom: var(--border-size) solid var(--color-orange);
+    height: 100%;
+    top: 0;
+    left: 0;
+    translate: -50vw 0;
+    opacity: 0.8;
+  }
+}
